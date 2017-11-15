@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>multiplication</title>
+</head>
+<body>
+<h1>multiplication</h1>
+
+</body>
+<script>
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    function generateNum() {
+        return getRandomInt(1, 9);
+    }
+
+    function generateQuestion() {
+        var firstNum = generateNum();
+        var secondNum = generateNum();
+        var answer = firstNum * secondNum;
+        while (true) {
+            var inputNum = window.prompt("How much is " + firstNum + " times " + secondNum + "?");
+            if (parseInt(inputNum) == answer) {
+                alert("Very good!");
+                return;
+            } else {
+                alert("No. Please try again.");
+            }
+        }
+    }
+
+    do {
+        generateQuestion();
+    } while (window.prompt("Would you like to answer another question? (yes or no)", "yes") == "yes");
+</script>
+</html>

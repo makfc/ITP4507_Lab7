@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Calculate Arithmetic Sequences and Sums</h1>
+
+</body>
+<script>
+    var input, n, d, answer = 0;
+    input = window.prompt("Enter n:", "20"); //The last value with default 0.
+    n = parseInt(input);
+    input = window.prompt("Enter d:", "2"); //The step size with default 0.
+    d = parseInt(input);
+
+    //Write your logic here!
+    for (var i = 0; (1 + i * d) <= (1 + n * d); i += d) {
+        answer += (1 + i * d);
+        console.log(1 + i * d);
+    }
+
+    //Alert the answer!
+    alert("part (c) " + answer);
+</script>
+</html>

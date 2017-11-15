@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Mark Six Result</h1>
+
+</body>
+<script>
+    var mark_six = [];
+    for (var i = 0; i < 6; i++) {
+        var num;
+        do {
+            num = Math.floor(Math.random() * (49 - 1) + 1);
+        } while (mark_six.includes(num));
+        mark_six[i] = num;
+    }
+    document.write('<table border="1">');
+    document.write('<tr> ' +
+        '<th>Subscript</th> ' +
+        '<th>Value</th> ' +
+        '</tr>');
+    for (var i = 0; i < 6; i++) {
+        document.write('<tr>');
+        document.write('<td>' + i + '</td>');
+        document.write('<td>' + mark_six[i] + '</td>');
+        document.write('</tr>');
+    }
+    document.write('</table>');
+</script>
+</html>
