@@ -10,16 +10,24 @@
 </body>
 <script>
     var input, n, d, answer = 1;
-    input = window.prompt("Enter n:", "10"); //The last value with default 0.
+    input = window.prompt("Enter n:", "5"); //The last value with default 0.
     n = parseInt(input);
     input = window.prompt("Enter d:", "1"); //The step size with default 0.
     d = parseInt(input);
 
     //Write your logic here!
-    for (var i = 1; i<=n; i += d) {
-        answer *= i;
-        console.log(i);
+    var factorial;
+    for (var i = 1; i <= n; i += d) {
+        factorial = 1;
+        var text = "";
+        for (var j = 1; j <= i; j++) {
+            factorial *= j;
+            text += (j + ((j < i) ? " * " : "") );
+        }
+        document.writeln(text + "<br>");
+        answer *= factorial;
     }
+
 
     //Alert the answer!
     alert("part (d) " + answer);
